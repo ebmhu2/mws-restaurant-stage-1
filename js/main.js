@@ -87,7 +87,7 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
-}
+};
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -122,7 +122,7 @@ updateRestaurants = () => {
       fillRestaurantsHTML();
     }
   })
-}
+};
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
@@ -162,8 +162,8 @@ createRestaurantHTML = (restaurant) => {
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.srcset = DBHelper.imageLargeUrlForRestaurant(restaurant);
-  image.sizes ='100vw';
-  image.alt = `${restaurant.name} restaurant`;
+  image.sizes ='50vw, 100vw';
+  image.alt = `${restaurant.name} restaurant photo`;
   liContainer.append(image);
 
   const name = document.createElement('h2');
@@ -183,10 +183,11 @@ createRestaurantHTML = (restaurant) => {
   more.href = DBHelper.urlForRestaurant(restaurant);
   let customLabel = `View details ${name.innerHTML} restaurant`;
   more.setAttribute('aria-label', customLabel);
-  liContainer.append(more)
+  more.setAttribute('role', 'button');
+  liContainer.append(more);
 
   return li
-}
+};
 
 /**
  * Add markers for current restaurants to the map.
@@ -200,7 +201,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
       window.location.href = marker.options.url;
     }
   });
-}
+};
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map

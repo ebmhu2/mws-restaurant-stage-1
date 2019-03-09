@@ -22,25 +22,28 @@
 
 <body>
     <!-- Beginning header -->
-    <header>
+    <header class="header" role="banner">
         <!-- Beginning nav -->
-        <nav>
-            <h1><a href="/">Restaurant Reviews</a></h1>
+        <nav class="nav" role="navigation">
+            <h1><a href="/" aria-label="Reload web page">Restaurant Reviews </a></h1>
         </nav>
         <!-- End nav -->
     </header>
     <!-- End header -->
+    <!-- Begin skip to main content -->
+    <a href="#filter-header" class="skip-link">Skip to main content</a>
+    <!-- End skip to main content -->
     <!-- Beginning main -->
-    <main id="maincontent">
+    <main id="maincontent" role="main">
         <!-- Beginning map-container -->
-        <section id="map-container">
-            <div id="map"></div>
+        <section id="map-container" aria-label="Map" tabindex="0">
+            <div id="map" aria-label="Restaurant Location" role="application"></div>
         </section>
         <!-- End map-container -->
         <section>
             <!-- Beginning filter-options-->
             <div class="filter-options">
-                <h2>Filter Results</h2>
+                <h2 id="filter-header" tabindex="-1">Filter Results</h2>
                 <div class="select">
                     <label for="neighborhoods-select">Choose Neighborhoods</label>
                     <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -78,8 +81,8 @@
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
     <!-- End of scripts -->
     <!-- start footer -->
-    <footer id="footer">
-        Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    <footer id="footer" role="contentinfo">
+        Copyright (c) 2019 <a href="/" aria-label="Footer Reload page"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
     <!-- End footer -->
 </body>

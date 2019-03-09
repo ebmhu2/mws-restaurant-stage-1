@@ -10,8 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- End of meta tags -->
     <!-- start of style sheets -->
-    <link rel="stylesheet" href="//normalize-css.googlecode.com/svn/trunk/normalize.css"/>
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css"/>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
           integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
           crossorigin=""/>
@@ -40,14 +41,18 @@
             <!-- Beginning filter-options-->
             <div class="filter-options">
                 <h2>Filter Results</h2>
-                <label for="neighborhoods-select">Choose Neighborhoods</label>
-                <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-                    <option value="all">All Neighborhoods</option>
-                </select>
-                <label for="cuisines-select">Choose Cuisines</label>
-                <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-                    <option value="all">All Cuisines</option>
-                </select>
+                <div class="select">
+                    <label for="neighborhoods-select">Choose Neighborhoods</label>
+                    <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+                        <option value="all">All Neighborhoods</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <label for="cuisines-select">Choose Cuisines</label>
+                    <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+                        <option value="all">All Cuisines</option>
+                    </select>
+                </div>
             </div>
             <!-- End filter-options-->
             <!-- Begin restaurants-list that filled by main.js-->

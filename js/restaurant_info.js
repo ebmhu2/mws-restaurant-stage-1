@@ -22,11 +22,11 @@ initMap = () => {
         scrollWheelZoom: false
       });
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken: 'pk.eyJ1IjoiZWJtaHUyIiwiYSI6ImNqc3cweDRvazBib2s0OW8wd2tvM253YmUifQ.O9Cdy4wz1gz_Z-Z7NO2v9g',
+        mapboxToken: 'pk.eyJ1Ijoic2FyYWgyN2giLCJhIjoiY2ppeHE2c2t0MDJlNDN3b2xla2hpMWNhbSJ9.1u_PFCvPclRUQnldkzwEuA',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'
       }).addTo(newMap);
       fillBreadcrumb();
@@ -89,6 +89,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.srcset = DBHelper.imageLargeUrlForRestaurant(restaurant);
+  image.sizes='100vw';
+  image.alt = `${restaurant.name} restaurant`;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -148,16 +151,21 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  const reviewTitle = document.createElement('div');
+  reviewTitle.setAttribute('class', 'review_title');
+  li.appendChild(reviewTitle);
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  li.appendChild(name);
+  reviewTitle.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  reviewTitle.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.setAttribute('class', 'rating');
   li.appendChild(rating);
 
   const comments = document.createElement('p');
@@ -185,7 +193,7 @@ getParameterByName = (name, url) => {
     url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
   const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`),
-    results = regex.exec(url);
+      results = regex.exec(url);
   if (!results)
     return null;
   if (!results[2])

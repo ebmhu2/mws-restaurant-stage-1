@@ -2,7 +2,7 @@
  This is a web-based application created as a project for Udacity FEND Nanodegree.
 ## Table of Contents
  * [Getting started](#Getting-started)
- * [Live Version ](#Live Version )
+ * [Live Version ](#Live-Version )
  * [About-Project ](#About-Project )
  * [Project-Dependencies](#Project-Dependencies)
  

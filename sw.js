@@ -1,4 +1,6 @@
+// Declare and initialize staticCacheName
 let staticCacheName = 'cache-v1';
+// Files to be loaded to cache
 const cacheFiles = [
   './',
   './index.html',
@@ -34,8 +36,6 @@ const cacheFiles = [
 // add event listener for SW install event
 self.addEventListener('install', function(event) {
   event.waitUntil(
-      // open a cache to hold pages we want to cache
-      // at install of SW
       caches.open(staticCacheName).then(function(cache){
         return cache.addAll(cacheFiles)
       })
@@ -82,7 +82,6 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(
       caches.keys().then(function(cacheNames) {
         return Promise.all(
-
             cacheNames.filter(function(cacheName) {
               return cacheName.startsWith('restaurant-static') && cacheName !== staticCacheName;
             }).map(function(cacheName) {

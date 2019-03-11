@@ -82,7 +82,6 @@ section {
 #maincontent {
     background-color: #f3f3f3;
     min-height: 100%;
-
 }
 
 
@@ -95,6 +94,7 @@ section {
     text-align: center;
     text-transform: uppercase;
 }
+
 
 /* ====================== Navigation ====================== */
 nav {
@@ -124,7 +124,7 @@ nav h1 a {
     padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
-    font-size: 17px;
+    font-size: 1.1em;
     margin: 0;
     width: 100%;
 }
@@ -153,12 +153,14 @@ nav h1 a {
     text-decoration: underline;
 }
 
+
 /* ====================== Map ====================== */
 #map {
     height: 400px;
     width: 100%;
     background-color: #ccc;
 }
+
 
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -190,7 +192,6 @@ nav h1 a {
 .filter-options .select {
     display: inline-block;
     margin-right: 50px;
-
 }
 
 
@@ -206,6 +207,7 @@ nav h1 a {
     width: 220px;
 }
 
+
 /* ====================== Restaurant Listing ====================== */
 /* add css variable to be used for Li column width */
 :root {
@@ -213,20 +215,17 @@ nav h1 a {
     --main-fontsize: 10pt;
 }
 
-
+/* use responsive grid-based layout for restaurant list */
 #restaurants-list {
     background-color: #f3f3f3;
     list-style: outside none none;
-    /*margin: 0;*/
     padding: 30px 15px 60px;
-    /*text-align: center;*/
     max-width: none;
     margin: 0;
     display: grid;
-    /* this will apply flexible wrapping style to all restaurants-list in all beak points */
+    /* this will apply flexible wrapping style to all restaurants-list in all break points */
     grid-template-columns: repeat(auto-fit, minmax(var(--main-width), 1fr));
     grid-gap: 1rem;
-
 }
 
 
@@ -288,7 +287,7 @@ nav h1 a {
 #restaurants-list li a:focus {
     background-color: gold;
     color: black;
-    box-shadow: 0 0 8px 3px rgba(180, 180, 180, .8);
+    box-shadow: 0 0 8px 3px rgba(180, 180, 180, 0.8);
 }
 
 
@@ -444,6 +443,7 @@ nav h1 a {
     color: #000;
 }
 
+/* review rating star */
 #reviews-list .rating li{
     list-style: none;
     display: inline;
@@ -452,6 +452,7 @@ nav h1 a {
     border: initial;
     color: orange;
 }
+
 
 #restaurant-hours td {
     color: #666;
@@ -464,13 +465,6 @@ nav h1 a {
     :root {
         --main-fontsize: 8pt;
     }
-
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -494,30 +488,23 @@ nav h1 a {
         height: 87%;
     }
 
-
     #restaurant-container,
     #reviews-container {
         width: 51%;
     }
 
-
     #restaurant-container {
         order: 2;
     }
-
 
     #reviews-container {
         order: 3;
         padding: 30px 20px 30px;
     }
 
-
     #restaurant-hours td {
         font-size: 0.85em;
     }
-
-
-
 }
 
 
@@ -527,43 +514,32 @@ nav h1 a {
     }
 }
 
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1045px) {
     #restaurant-hours td {
         font-size: 1.2em;
     }
 
-
     #restaurant-address {
         font-size: 1.3em;
     }
-
 
     #restaurant-cuisine {
         font-size: 1.3em;
     }
 
-
     #restaurant-name {
         font-size: 1.7em;
     }
-
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
-
 
 /* ====================== Accessibility ====================== */
 .skip-link {
     position: absolute;
     top: -50px;
     left: 0;
-    background: #fff;
-    color: #006598;
+    background: #f9fdff;
+    color: #305d8e;
     padding: 8px;
     z-index: 10000;
     transition: top 1s ease;
@@ -573,7 +549,7 @@ nav h1 a {
 .skip-link:focus {
     top: 0;
     box-shadow: none;
-    outline: 3px solid #118d98;
+    outline: 3px solid #ef09b2;
 }
 
 
@@ -617,10 +593,4 @@ nav h1 a:focus,
     box-shadow: none;
     outline: 1px solid #333;
     padding: 10px;
-}
-
-/* Add a color on mouse-over */
-#breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
 }

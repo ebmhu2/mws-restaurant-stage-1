@@ -90,7 +90,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.srcset = DBHelper.imageLargeUrlForRestaurant(restaurant);
-  image.sizes='100vw';
+  image.sizes='50vw, 100vw';
   image.alt = `${restaurant.name} restaurant`;
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -163,10 +163,25 @@ createReviewHTML = (review) => {
   date.innerHTML = review.date;
   reviewTitle.appendChild(date);
 
-  const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
+  const rating = document.createElement('ul');
+  rating.textContent =`Rating: `;
+  //rating.innerHTML = `Rating: ${review.rating}`;
+
+  for (let j = 1 ; j < review.rating + 1 ; j++) {
+    let ratingLi = document.createElement('li');
+    ratingLi.innerHTML = `<i class="fa fa-star"></i>`;
+    rating.appendChild(ratingLi);
+  }
+
+  for (let i = 1 ;i < 6 - review.rating; i++){
+    let ratingLi = document.createElement('li');
+    ratingLi.innerHTML = `<i class="fa fa-star-o"></i>`;
+    rating.appendChild(ratingLi);
+  }
+
   rating.setAttribute('class', 'rating');
   li.appendChild(rating);
+
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
@@ -174,6 +189,7 @@ createReviewHTML = (review) => {
 
   return li;
 }
+
 
 /**
  * Add restaurant name to the breadcrumb navigation menu

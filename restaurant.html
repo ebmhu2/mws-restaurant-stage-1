@@ -2,78 +2,85 @@
 <html lang="en">
 
 <head>
-  <!-- start of meta-tags -->
-  <!-- Specify the character encoding for the HTML document -->
-  <meta charset="UTF-8">
-  <!-- Setting The Viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- End of meta tags -->
-  <!-- Normalize.css for better cross-browser consistency -->
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <!-- Main CSS file -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href= "https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-  <title>Restaurant Info</title>
+    <!-- start of meta-tags -->
+    <!-- Specify the character encoding for the HTML document -->
+    <meta charset="UTF-8">
+    <!-- Setting The Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- End of meta tags -->
+    <!-- Normalize.css for better cross-browser consistency -->
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css"/>
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin=""/>
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/v4-shims.css">
+    <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-  <!-- Beginning header -->
-  <header class="inside-header" role="banner">
+<!-- Beginning header -->
+<header class="inside-header" role="banner">
     <!-- Beginning nav -->
     <nav class="inside-nav" role="navigation">
-      <h1><a href="/" aria-label="Reload web page">Restaurant Reviews</a></h1>
+        <h1><a href="/" aria-label="Reload web page">Restaurant Reviews</a></h1>
     </nav>
     <!-- Begin skip to main content -->
     <a href="#restaurant-name" class="skip-link">Skip to main content</a>
     <!-- End skip to main content -->
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" aria-label="Back to Home" role="menu">
-      <li><a href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
-  </header>
-  <!-- End header -->
-  <!-- Beginning main -->
-  <main id="maincontent" role="main">
+</header>
+<!-- End header -->
+<!-- Beginning main -->
+<main id="maincontent" role="main">
     <!-- Beginning map -->
     <section id="map-container" aria-label="Map" tabindex="0">
-      <div id="map" aria-label="Restaurant Location" role="application"></div>
+        <div id="map" aria-label="Restaurant Location" role="application"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name" tabindex="-1"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+        <h1 id="restaurant-name" tabindex="-1"></h1>
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list"></ul>
+        <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
-  </main>
-  <!-- End main -->
+</main>
+<!-- End main -->
 
-  <!-- Beginning footer -->
-  <footer id="footer">
+<!-- Beginning footer -->
+<footer id="footer">
     Copyright (c) 2019 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-  </footer>
-  <!-- End footer -->
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-  <!-- Beginning scripts -->
-  <!-- Database helpers -->
-  <script src="js/dbhelper.js"></script>
-  <!-- Main javascript file -->
-  <script src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
- <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
-  <!-- End scripts -->
+</footer>
+<!-- End footer -->
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+        integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+        crossorigin=""></script>
+<!-- Beginning scripts -->
+<!-- Database helpers -->
+<script src="js/dbhelper.js"></script>
+<!-- Main javascript file -->
+<script src="js/restaurant_info.js"></script>
+<!-- Google Maps -->
+<!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
+<!-- End scripts -->
 
 </body>
 
